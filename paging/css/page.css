@@ -29,14 +29,21 @@
 	text-align: center;
 	cursor: pointer;
 }
+.j-page-list li:hover{
+	background: #3897cd;
+	color: #fff;
+}
 .j-page-list .j-page-forbid{
 	cursor: not-allowed;
-	background: #ccc;
+	background: #ccc !important;
+	color: #000!important;
 }
 .j-page-list .j-page-omit{
 	border: none;
-	cursor: not-allowed;
+	cursor: default;
 	vertical-align: bottom;
+	background: #fff !important;
+	color: #000!important;
 }
 .j-page-list .j-page-parv{
 	width: 55px;

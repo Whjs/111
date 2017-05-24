@@ -71,7 +71,8 @@ jQuery.fn.extend({
 							default: listStr += '<li page-data='+i+'>'+i+'</li>'
 						}
 					}
-				}else if( n > page.showPage - 3 && n < page.sumPage - page.showPage + 3 ){
+				}else if( n > page.showPage - 3 && n <= page.sumPage - page.showPage + 3 ){
+					console.log(page.showPage - 3 , page.sumPage - page.showPage + 3);
 					for(var i = 1; i < page.showPage + 1; i++){
 						switch(i){
 							case 1: listStr += '<li page-data='+i+'>'+i+'</li>'; break;

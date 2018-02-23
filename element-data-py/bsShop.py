@@ -8,6 +8,7 @@ import time
 import socket
 import jsonShop
 
+# 获取 BeautifulSoup对象
 def getBsObj (url):
 	browser = webdriver.PhantomJS()
 	browser.get(url)
@@ -15,6 +16,7 @@ def getBsObj (url):
 	bsObj = BeautifulSoup(browser.page_source, "html.parser")
 	return bsObj
 
+# 获取需要执行js 的页面 BeautifulSoup对象 
 def getBsObjJs (url, js):
 	browser = webdriver.PhantomJS()
 	browser.get(url)

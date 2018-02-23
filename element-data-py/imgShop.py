@@ -5,18 +5,21 @@ import socket
 import bsShop
 import fileShop
 
+# 获取查找到的元素
 def getImgUrlArrJs (url, js, condition, callBackGetImgURl):
 	bsObj = bsShop.getBsObjJs(url, js)
 	imgUrlArr = bsObj.find_all(attrs={"class": condition})
 	imgUrlArr = callBackGetImgURl(imgUrlArr)
 	return imgUrlArr
 
+# 获取查找到的元素
 def getImgUrlArr (url, condition, callBackGetImgURl):
 	bsObj = bsShop.getBsObj(url)
 	imgUrlArr = bsObj.find_all(attrs={"class": condition})
 	imgUrlArr = callBackGetImgURl(imgUrlArr)
 	return imgUrlArr
 
+# 获取图片名称
 def getImgNameArr (imgUrlArr, p1):
 	pattern1 = re.compile(p1) # 编译这段正则表达式
 	imgNameArr = []
@@ -31,6 +34,7 @@ def getImgNameArr (imgUrlArr, p1):
 		imgNameArr.append(srcStr)
 	return imgNameArr
 
+# 二次封装作用
 def getImgFnJs (condition, p1, callBackGetImgURl):
 	def auto_down(url,filename):
 		try:
@@ -60,6 +64,7 @@ def getImgFnJs (condition, p1, callBackGetImgURl):
 			auto_down(img_src, r'' + url2 + imgName[0] + '.' + imgName[1])
 	return getImg
 
+# 二次封装作用
 def getImgFn (condition, p1, callBackGetImgURl):
 	def auto_down(url,filename):
 		try:
